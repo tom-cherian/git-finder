@@ -1,0 +1,17 @@
+.form-control{
+    width: 30%;
+    margin-left: 33%;
+    margin-top: 5%;
+    border-style: none;
+    border-bottom: 1px solid;
+    margin-bottom: 10px
+}
+.btn{
+    margin-left: 33%;
+    
+}
+.card{
+    margin-top: 10px;
+    margin-left: 33%;
+    width: 30%;
+}

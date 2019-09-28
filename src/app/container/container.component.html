@@ -1,0 +1,8 @@
+<input class="form-control w-30" type="text" [(ngModel)]="search" placeholder="Github user name">
+<button type="button" class="btn btn-primary" (click)= 'pushData()'>Find me</button>
+<div class="card" >
+    <img class="card-img-top" src={{profile.avatar_url}} alt="Card image">
+    <div class="card-body">
+      <p class="card-text"><b>{{profile.login}}</b></p>
+    </div>  
+  </div>
