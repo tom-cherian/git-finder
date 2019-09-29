@@ -6,12 +6,48 @@
     border-bottom: 1px solid;
     margin-bottom: 10px
 }
+
 .btn{
     margin-left: 33%;
     
 }
+
+h6{
+    width: 30%;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-left: 33%;
+    margin-top: 10px;
+}
+
 .card{
     margin-top: 10px;
     margin-left: 33%;
     width: 30%;
+    border: none;
+}
+
+.card-title{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+}
+
+.card-body{
+    background-color: rgb(43, 75, 255);
+    width: 100%;
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+.spinner-border{    
+    width: 200px;
+    height: 200px;
 }

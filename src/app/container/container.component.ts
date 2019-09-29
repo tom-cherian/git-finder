@@ -10,22 +10,27 @@ import { ToastrService } from 'ngx-toastr';
 export class ContainerComponent implements OnInit {
   [x: string]: any;
   search;
+  isLoad = false;
+  showCard = false;
   profile = {};
   baseUrl = 'https://api.github.com/users/';
 
   constructor(private httpClient: HttpClient, private toastr: ToastrService) { }
 
-  showSuccess() {
+  showError() {
     this.toastr.error('User not found!', 'Sorry!');
   }
 
+  showSuccess() {
+    this.toastr.success('User found!');
+  }
+
   pushData() {
+    this.isLoad = true;
+    this.showCard = true;
     this.httpClient.get(this.baseUrl + this.search + '?access_token=93864d79f03ae5344a6cdb0e45db19a542685691')
-      .subscribe(res => { this.profile = res; },
-        error => { this.showSuccess(); },
-
-
-
+      .subscribe(res => { this.showSuccess(); this.profile = res; this.isLoad = false; },
+        error => { this.showError(); this.isLoad = false; this.showCard = false; },
       );
 
   }

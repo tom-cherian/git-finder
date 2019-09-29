@@ -1,8 +1,22 @@
 <input class="form-control w-30" type="text" [(ngModel)]="search" placeholder="Github user name">
 <button type="button" class="btn btn-primary" (click)= 'pushData()'>Find me</button>
-<div class="card" >
-    <img class="card-img-top" src={{profile.avatar_url}} alt="Card image">
-    <div class="card-body">
-      <p class="card-text"><b>{{profile.login}}</b></p>
+
+
+
+<div class="card" *ngIf="showCard" >
+
+    <div *ngIf="isLoad" class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    <h5 class="card-title" *ngIf= "!isLoad">{{profile.name}}</h5>
+    
+    <img class="card-img-top" *ngIf= "!isLoad" src={{profile.avatar_url}} >
+
+    <div class="card-body" *ngIf= "!isLoad">
+      <a class="card-text"  href="{{profile.html_url}}" target="_blank">@ {{profile.login}}</a>
+      <p class="card-text" >{{profile.bio}}</p>
+      <p class="card-text" >{{profile.company}}</p>
+
     </div>  
+
   </div>
