@@ -28,7 +28,7 @@ export class ContainerComponent implements OnInit {
   pushData() {
     this.isLoad = true;
     this.showCard = true;
-    this.httpClient.get(this.baseUrl + this.search + '?access_token=93864d79f03ae5344a6cdb0e45db19a542685691')
+    this.httpClient.get(this.baseUrl + this.search)
       .subscribe(res => { this.showSuccess(); this.profile = res; this.isLoad = false; },
         error => { this.showError(); this.isLoad = false; this.showCard = false; },
       );
